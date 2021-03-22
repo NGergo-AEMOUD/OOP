@@ -3,6 +3,7 @@ package alkalmazott;
 public class Alkalmazott {
 	private final String nev;
 	private int fizetes;
+	private final static int SZJA = 15;
 	
 	public Alkalmazott(String nev, int fizetes) {
 		super();
@@ -14,7 +15,6 @@ public class Alkalmazott {
 		return nev;
 	}
 
-
 	public int getFizetes() {
 		return fizetes;
 	}
@@ -25,6 +25,14 @@ public class Alkalmazott {
 
 	public void Fizetesnovel(double szazalek) {
 		fizetes+=(int)(fizetes*(szazalek/100));
+	}
+	
+	public int getSZJA(){
+		return (int)(this.fizetes * (SZJA/100));
+	}
+	
+	public boolean nagyobbe(Alkalmazott masik) {
+		return fizetes>masik.getFizetes();
 	}
 
 	@Override
